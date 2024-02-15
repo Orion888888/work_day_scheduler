@@ -10,8 +10,14 @@ $(function () {
   function hourlyColor() {
     $('.time-block').each(function() {
       const blockHour = parseInt(this.id);
-    })
+      $(this).toggleClass('past', blockHour < currentHour);
+      $(this).toggleClass('present', blockHour === currentHour);
+      $(this).toggleClass('future', blockHour > currentHour);
+    });
   }
+
+  //the following function save user input into localStorage when save button in clicked.
+  
 
 
   // TODO: Add a listener for click events on the save button. This code should

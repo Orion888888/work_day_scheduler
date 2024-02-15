@@ -1,10 +1,19 @@
+const localeSettings = {};
+dayjs.locale(localeSettings);
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
+  //gets current hour from dayjs library
+  const currentHour = dayjs().format('H');
+  //colors change depending on the following: past, present, future.
+  function hourlyColor() {
+    $('.time-block').each(function() {
+      const blockHour = parseInt(this.id);
+    })
+  }
 
 
-  
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener

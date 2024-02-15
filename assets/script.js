@@ -7,6 +7,9 @@ $(function () {
   //gets current hour from dayjs library
   const currentHour = dayjs().format('H');
   //colors change depending on the following: past, present, future.
+  //uses jQuery selector to select element with class 'time-block'
+  //iterates using the each() method
+  //toggleClass() method sets and updates the codition according to the time.
   function hourlyColor() {
     $('.time-block').each(function() {
       const blockHour = parseInt(this.id);
@@ -17,7 +20,21 @@ $(function () {
   }
 
   //the following function save user input into localStorage when save button in clicked.
-  
+  function textEntry() {
+    $('.saveBtn').on('click', function() {
+      const key = $(this).parent().attr('id');
+      const value = $(this).siblings('description').val();
+      localStorage.setItem(key, value);
+    })
+  }
+
+  //Refreshes the color to stick to the conditions of: past, present, future.
+  function refreshColor() {
+    $('.time-block').each(function() {
+      const blockHour = parseInt(this.id);
+      if (blockHour == currentHour)
+    })
+  }
 
 
   // TODO: Add a listener for click events on the save button. This code should

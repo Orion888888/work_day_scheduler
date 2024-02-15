@@ -32,9 +32,17 @@ $(function () {
   function refreshColor() {
     $('.time-block').each(function() {
       const blockHour = parseInt(this.id);
-      if (blockHour == currentHour)
-    })
+      if (blockHour == currentHour) {
+        $(this).removeClass('past future').addClass('present');
+      } else if (blockHour < currentHour) {
+        $(this).removeClass('future present').addClass('past');
+      } else {
+        $(this).removeClass('past present').addClass('future');
+      }
+    });
   }
+
+  //retrieves user input from local storage
 
 
   // TODO: Add a listener for click events on the save button. This code should

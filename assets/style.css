@@ -3,6 +3,10 @@ body {
   font-size: 16px;
 }
 
+header {
+  background-image: var(--bs-gradient);
+}
+
 textarea {
   background: transparent;
   border: none;

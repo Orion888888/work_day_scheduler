@@ -53,7 +53,12 @@ $('.time-block').each(function() {
 function updateTime() {
   const dateElement = $('#currentDay');
   const timeElement = $('#currentTime');
+  const currentDate = dayjs().format('MMM D, dddd, YYYY');
+  const currentTime = dayjs().format('hh:mm:ss A');
+  dateElement.text(currentDate);
+  timeElement.text(currentTime);
 }
+
 
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in

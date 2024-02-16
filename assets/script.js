@@ -43,7 +43,17 @@ $(function () {
   }
 
   //retrieves user input from local storage
+$('.time-block').each(function() {
+  const key = $(this).attr('id');
+  const value = localStorage.getItem(key);
+  $(this).children('.description').val(value);
+});
 
+//displays the current time and date on the header of the page.
+function updateTime() {
+  const dateElement = $('#currentDay');
+  const timeElement = $('#currentTime');
+}
 
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
